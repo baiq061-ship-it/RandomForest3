@@ -1,0 +1,56 @@
+{
+  "features": {
+    "Symptom duration": {
+      "label": "Symptom duration",
+      "unit": "hours",
+      "kind": "continuous",
+      "default": 2.0,
+      "step": 0.5,
+      "format": "%.2f",
+      "observed_min": 0.166666667,
+      "observed_max": 96.0,
+      "help": "Observed development range: 0.17 to 96.00."
+    },
+    "Heart rate": {
+      "label": "Heart rate",
+      "unit": "bpm",
+      "kind": "continuous",
+      "default": 177.5,
+      "step": 1.0,
+      "format": "%.0f",
+      "observed_min": 103.0,
+      "observed_max": 239.0,
+      "help": "Observed development range: 103 to 239."
+    },
+    "K+": {
+      "label": "K\u207a",
+      "unit": "mmol/L",
+      "kind": "continuous",
+      "default": 3.76655,
+      "step": 0.01,
+      "format": "%.2f",
+      "observed_min": 2.73,
+      "observed_max": 4.91,
+      "help": "Column aliases K+ and K\u207a are both accepted for batch prediction."
+    },
+    "Age": {
+      "label": "Age",
+      "unit": "years",
+      "kind": "continuous",
+      "default": 52.0,
+      "step": 1.0,
+      "format": "%.0f",
+      "observed_min": 15.0,
+      "observed_max": 88.0,
+      "help": "Observed development range: 15 to 88."
+    },
+    "First episode": {
+      "label": "First episode",
+      "kind": "binary",
+      "default": 1,
+      "observed_min": 0,
+      "observed_max": 1,
+      "help": "Yes=1, No=0."
+    }
+  }
+}

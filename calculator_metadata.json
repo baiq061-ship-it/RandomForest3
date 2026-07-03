@@ -1,0 +1,28 @@
+{
+  "best_model": "RandomForest",
+  "best_threshold": 0.5726524606264398,
+  "selected_features": [
+    "Symptom duration",
+    "Heart rate",
+    "K+",
+    "Age",
+    "First episode"
+  ],
+  "continuous_features": [
+    "Symptom duration",
+    "Heart rate",
+    "K+",
+    "Age",
+    "First episode"
+  ],
+  "categorical_features": [],
+  "categorical_levels": {},
+  "continuous_medians": {
+    "Symptom duration": 2.0,
+    "Heart rate": 177.5,
+    "K+": 3.766549999999999,
+    "Age": 52.0,
+    "First episode": 1.0
+  },
+  "target": "SVT conversion success"
+}

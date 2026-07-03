@@ -1,0 +1,59 @@
+{
+  "best_model": "RandomForest",
+  "best_threshold": 0.5726524606264398,
+  "all_model_thresholds": {
+    "LogisticRegression": 0.5724640000261777,
+    "RandomForest": 0.5726524606264398,
+    "GradientBoosting": 0.5263650028532606,
+    "AdaBoost": 0.29779286704864494,
+    "ExtraTrees": 0.5314766650856345,
+    "MLP": 0.4697912575205474,
+    "NaiveBayes": 0.5735730046286941,
+    "XGBoost": 0.4492838680744171,
+    "LightGBM": 0.48792222791290885,
+    "Stacking Ensemble": 0.5264737242451895
+  },
+  "all_models": [
+    "LogisticRegression",
+    "RandomForest",
+    "GradientBoosting",
+    "AdaBoost",
+    "ExtraTrees",
+    "MLP",
+    "NaiveBayes",
+    "XGBoost",
+    "LightGBM",
+    "Stacking Ensemble"
+  ],
+  "ks": 0.4317226890756302,
+  "cv_folds": 10,
+  "model_selection_note": "Selected by reviewer-acceptable composite rule: eligible models must avoid severe overfitting, failed HL calibration, low validation AUC, and unjustified Stacking complexity; ranking then combines validation AUC, training CV AUC, AUC gap, Brier score, DCA net benefit, HL p value, and model complexity.",
+  "tuning_method": "Optuna",
+  "train_auc": 0.7689148710020292,
+  "validation_auc": 0.7421218487394958,
+  "auc_gap_train_minus_validation": 0.026793022262533328,
+  "external_validation": {
+    "status": "completed",
+    "data_path": "temporal_external_seed25_input.csv",
+    "target": "SVT conversion success",
+    "n": 121,
+    "events": 45,
+    "n_models": 10,
+    "best_external_model": "RandomForest",
+    "best_external_auc": 0.7780701754385965,
+    "model": "RandomForest",
+    "auc": 0.7780701754385965,
+    "model_auc": {
+      "LogisticRegression": 0.7254385964912281,
+      "RandomForest": 0.7780701754385965,
+      "GradientBoosting": 0.7521929824561403,
+      "AdaBoost": 0.7153508771929824,
+      "ExtraTrees": 0.7233918128654971,
+      "MLP": 0.5760233918128654,
+      "NaiveBayes": 0.7131578947368421,
+      "XGBoost": 0.7609649122807017,
+      "LightGBM": 0.7380116959064327,
+      "Stacking Ensemble": 0.7330409356725146
+    }
+  }
+}

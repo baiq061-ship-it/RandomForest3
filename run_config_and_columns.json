@@ -1,0 +1,202 @@
+{
+  "data_path": "training_seed25_temporal_input.csv",
+  "target": "SVT conversion success",
+  "positive_label": "1",
+  "id_columns": [],
+  "candidate_columns": [
+    "Sex",
+    "Age",
+    "Temperature",
+    "Heart rate",
+    "RR",
+    "SBP",
+    "DBP",
+    "SpO2",
+    "Hypertension",
+    "DM",
+    "Cardiovascular disease",
+    "First episode",
+    "K+",
+    "Symptom duration"
+  ],
+  "continuous_columns": [
+    "Age",
+    "Temperature",
+    "Heart rate",
+    "RR",
+    "SBP",
+    "DBP",
+    "SpO2",
+    "K+",
+    "Symptom duration"
+  ],
+  "categorical_columns": [
+    "Sex",
+    "Hypertension",
+    "DM",
+    "Cardiovascular disease",
+    "First episode"
+  ],
+  "numeric_unique_as_categorical": 10,
+  "test_size": 0.3,
+  "random_state": 25,
+  "cv_folds": 10,
+  "model_grid": "overfit_control",
+  "include_optional_models": true,
+  "include_tabpfn": false,
+  "tabpfn": {
+    "enabled": false
+  },
+  "include_bnn": false,
+  "bayesian_neural_network": {
+    "enabled": false
+  },
+  "tuning_method": "optuna",
+  "optuna": {
+    "n_trials": 30,
+    "timeout_per_model": 240
+  },
+  "delong_test": true,
+  "rcs_df": 4,
+  "modeling": {
+    "binary_categorical_as_numeric": true
+  },
+  "feature_selection": {
+    "combination_strategy": "lasso_boruta_union",
+    "epv": 1,
+    "max_features_final": null,
+    "boruta_shadow_runs": 8,
+    "boruta_shadow_percentile": 95,
+    "boruta_trees": 200,
+    "rf_rfe": {
+      "enabled": false,
+      "n_estimators": 1000,
+      "cv_folds": 5,
+      "min_features_to_select": 1,
+      "step": 1,
+      "min_samples_leaf": 1,
+      "max_depth": null,
+      "max_features": "sqrt",
+      "oob_score": false
+    }
+  },
+  "imputation": {
+    "method": "missforest",
+    "max_iter": 5,
+    "n_estimators": 100,
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "max_features": "sqrt",
+    "fit_all_columns": false,
+    "stopping_tolerance": 0.0001,
+    "save_imputed_data": true,
+    "n_jobs": 1
+  },
+  "threshold_source": "cv",
+  "publication": {
+    "validation_design": "temporal_external",
+    "development_period": "Development cohort provided in archived input snapshot: training_seed25_temporal_input.csv",
+    "validation_period": "Temporal external validation cohort provided in archived input snapshot: temporal_external_seed25_input.csv",
+    "clinical_setting": "Single-center emergency or clinical care cohort.",
+    "target_population": "Patients with supraventricular tachycardia represented in the provided structured tabular data.",
+    "intended_use": "Pre-treatment estimation of the probability of successful supraventricular tachycardia conversion.",
+    "outcome_definition": "Successful conversion of supraventricular tachycardia after the conversion attempt, coded as 1 for success and 0 for non-success.",
+    "predictor_measurement_time": "Candidate predictors were measured at baseline before conversion outcome assessment.",
+    "data_dictionary_path": "svt_temporal_external_seed25_data_dictionary.csv",
+    "candidate_journal_tier": "SCI_Q3"
+  },
+  "model_selection": {
+    "strategy": "reviewer_acceptable",
+    "min_validation_auc": 0.7,
+    "max_auc_gap": 0.1,
+    "min_external_auc": 0.7,
+    "dca_threshold_low": 0.01,
+    "dca_threshold_high": 0.99,
+    "clinical_threshold_low": 0.1,
+    "clinical_threshold_high": 0.5
+  },
+  "external_validation": {
+    "data_path": "temporal_external_seed25_input.csv",
+    "target": "SVT conversion success",
+    "positive_label": "1",
+    "id_columns": []
+  },
+  "notes": {
+    "task": "jqxx3 binary clinical prediction model with temporal external validation and random seed 25.",
+    "random_seed": 25,
+    "input_files": "Archived input snapshots matching jqxx3_seed25_temporal_external_results_20260623.",
+    "reproduce_source_results": "jqxx3_seed25_temporal_external_results_20260623",
+    "training_snapshot_sha256": "98db342e1975a3dab5e8a577671340ec33d2c3383849ffc20558cda8ab03fea4",
+    "external_snapshot_sha256": "25a444024cbf15ea8cf5a6d15daa5e8d0652054be73df23d31d4ff87ec8fc59d"
+  },
+  "continuous_columns_inferred": [
+    "Age",
+    "Temperature",
+    "Heart rate",
+    "RR",
+    "SBP",
+    "DBP",
+    "SpO2",
+    "K+",
+    "Symptom duration"
+  ],
+  "categorical_columns_inferred": [
+    "Sex",
+    "Hypertension",
+    "DM",
+    "Cardiovascular disease",
+    "First episode"
+  ],
+  "modeling_column_roles": {
+    "source": "binary_categorical_as_numeric",
+    "reporting_continuous_columns": [
+      "Age",
+      "Temperature",
+      "Heart rate",
+      "RR",
+      "SBP",
+      "DBP",
+      "SpO2",
+      "K+",
+      "Symptom duration"
+    ],
+    "reporting_categorical_columns": [
+      "Sex",
+      "Hypertension",
+      "DM",
+      "Cardiovascular disease",
+      "First episode"
+    ],
+    "modeling_continuous_columns": [
+      "Age",
+      "Temperature",
+      "Heart rate",
+      "RR",
+      "SBP",
+      "DBP",
+      "SpO2",
+      "K+",
+      "Symptom duration",
+      "Sex",
+      "Hypertension",
+      "DM",
+      "Cardiovascular disease",
+      "First episode"
+    ],
+    "modeling_categorical_columns": [],
+    "binary_categorical_moved_to_numeric": [
+      "Sex",
+      "Hypertension",
+      "DM",
+      "Cardiovascular disease",
+      "First episode"
+    ]
+  },
+  "selected_features": [
+    "Symptom duration",
+    "Heart rate",
+    "K+",
+    "Age",
+    "First episode"
+  ]
+}
